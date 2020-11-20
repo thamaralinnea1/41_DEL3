@@ -69,16 +69,19 @@ public class GameController {
         }
 
         while (!gameEnd(playerController)){
-            System.out.println("start runde" + p.getName() + " tager sin tur");
+            System.out.println("start runde ");
             scanner.nextLine();
-            System.out.println(p.getPosition() + " Før kast ");
-           //bevæger spille med terningekast.
+            System.out.println(p.getPosition() + " nuværende position ");
+
+            //bevæger spiller med terningekast.
             p.movePlayer(die.roll());
-            System.out.println(p.getPosition() + " Efter kast " + "har kastet en " + die.getFaceValue());
-            playerController.switchPlayer();
+            System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
+
+
 
 
         }
     }
+
 
 }
