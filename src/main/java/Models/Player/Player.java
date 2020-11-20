@@ -29,8 +29,10 @@ public class Player {
 
     }
     //sætter position til hvor meget spiller skal rykke.
+    //max 24 felter
     public void movePlayer (int moveAmmount){
-        setPosition(getPosition() + moveAmmount);
+        setPosition((getPosition() + moveAmmount)%24);
+
 
     }
 
