@@ -6,10 +6,13 @@ import Models.Board.Field;
 import Models.Player.Account;
 import Models.Player.Player;
 
+import java.util.Scanner;
+
 public class GameController {
     public PlayerController playerController;
     public Board board;
     public Die die;
+
 
 
     public GameController() {
@@ -30,13 +33,13 @@ public class GameController {
 
     }
 
-    //Returne om hvis balance er støre end field price
+    //Returne om hvis balance er større end field price
     public boolean checkAccount (Player currentPlayer, Field currentField) {
         return currentPlayer.getAccount().getBalance() >= currentField.getPrice();
 
 
     }
-
+    // Sætter currentspiller til FieldOwner og trækker feltets værdi fra spillerens account
     public void  buyField (Player currentPlayer){
         Field currentField = getCurrentField(currentPlayer);
         currentField.setPropertyOwner(currentPlayer);
@@ -44,5 +47,32 @@ public class GameController {
 
     }
 
+    public boolean gameEnd (PlayerController pc){
+       boolean gameEnd = false;
+        for (int i = 0; i < pc.getNumPlayers(); i++) {
+            if (pc.getPlayer(i).getAccount().getBalance() <= 0)
+                gameEnd = true;
+        }
+        return gameEnd;
+    }
+    // gameloop
+    // ! -> ikke
+    public void runGame (){
+        Scanner scanner = new Scanner(System.in);
+        playerController.setCurrentPlayer(0);
+        while (!gameEnd(playerController)){
+            System.out.println("start runde");
+            scanner.nextLine();
+           die.roll();
+           int faceValue = die.getFaceValue();
+           int currentPosition = playerController.getCurrentPlayer().getPosition();
+            System.out.println(currentPosition);
+            int newPosition = currentPosition + faceValue;
+            playerController.getCurrentPlayer().setPosition(newPosition);
+
+
+
+        }
+    }
 
 }
