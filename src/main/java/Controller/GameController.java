@@ -60,15 +60,22 @@ public class GameController {
     public void runGame (){
         Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
+        Player p = playerController.getCurrentPlayer();
+
+        for (int i = 0; i < playerController.getNumPlayers(); i++) {
+            System.out.println(" Angiv dit navn ");
+            String name = scanner.nextLine();
+            playerController.getPlayer(i).setName(name);
+        }
+
         while (!gameEnd(playerController)){
             System.out.println("start runde");
             scanner.nextLine();
-           die.roll();
-           int faceValue = die.getFaceValue();
-           int currentPosition = playerController.getCurrentPlayer().getPosition();
-            System.out.println(currentPosition);
-            int newPosition = currentPosition + faceValue;
-            playerController.getCurrentPlayer().setPosition(newPosition);
+            System.out.println(p.getPosition() + " Før kast ");
+           //bevæger spille med terningekast.
+            p.movePlayer(die.roll());
+            System.out.println(p.getPosition() + " Efter kast " + "har kastet en " + die.getFaceValue());
+
 
 
 

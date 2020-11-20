@@ -28,6 +28,10 @@ public class Player {
         return position;
 
     }
+    //sætter position til hvor meget spiller skal rykke.
+    public void movePlayer (int moveAmmount){
+        setPosition(getPosition() + moveAmmount);
+    }
 
     public void setPosition(int newPosition){
         this.position = newPosition;
