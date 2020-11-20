@@ -5,7 +5,7 @@ public class Player {
     private int position;
     private final int MaxPlayers = 4;
     private final int MinPlayers = 2;
-    private Piece piece;
+   // private Piece piece;
     private Account account;
 
 

@@ -40,6 +40,6 @@ public class GameController {
         Field currentField = getCurrentField(currentPlayer);
         currentField.setPropertyOwner(currentPlayer);
 
-
     }
+
 }
