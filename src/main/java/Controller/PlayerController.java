@@ -31,8 +31,7 @@ public class PlayerController {
 
     //CurrentPlayer øges med 1. Modulus bruges så current player ikke kan overskride arraylist.
     public void switchPlayer(){
-        currentPlayerId = (currentPlayerId+1)%playerList.length;
-        currentPlayer = playerList[currentPlayerId];
+        setCurrentPlayer((currentPlayerId+1)%playerList.length);
 
     }
     public void setCurrentPlayer(int index){

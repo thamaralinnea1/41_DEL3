@@ -31,6 +31,7 @@ public class Player {
     //sætter position til hvor meget spiller skal rykke.
     public void movePlayer (int moveAmmount){
         setPosition(getPosition() + moveAmmount);
+
     }
 
     public void setPosition(int newPosition){
