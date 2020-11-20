@@ -60,7 +60,6 @@ public class GameController {
     public void runGame (){
         Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
-        Player p = playerController.getCurrentPlayer();
 
         for (int i = 0; i < playerController.getNumPlayers(); i++) {
             System.out.println(" Angiv dit navn ");
@@ -69,16 +68,16 @@ public class GameController {
         }
 
         while (!gameEnd(playerController)){
-            System.out.println("start runde ");
+            // hvilken spiller vi har fat i
+            Player p = playerController.getCurrentPlayer();
+            System.out.println("start runde " + p.getName() + " tryk enter");
             scanner.nextLine();
             System.out.println(p.getPosition() + " nuværende position ");
 
             //bevæger spiller med terningekast.
             p.movePlayer(die.roll());
             System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
-
-
-
+            playerController.switchPlayer();
 
         }
     }
