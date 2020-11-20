@@ -3,10 +3,11 @@ package Controller;
 import Models.Board.Board;
 import Models.Board.Die;
 import Models.Board.Field;
+import Models.Player.Account;
 import Models.Player.Player;
 
 public class GameController {
-
+    public PlayerController playerController;
     public Board board;
     public Die die;
 
@@ -15,7 +16,7 @@ public class GameController {
         this.board = new Board();
         this.die = new Die();
 
-
+    playerController = new PlayerController(4);
 
     }
     // returnere felt spilleren står på
@@ -36,10 +37,12 @@ public class GameController {
 
     }
 
-    public void buyField (Player currentPlayer){
+    public void  buyField (Player currentPlayer){
         Field currentField = getCurrentField(currentPlayer);
         currentField.setPropertyOwner(currentPlayer);
+        currentPlayer.getAccount().addPoint(-currentField.getPrice());
 
     }
+
 
 }

@@ -14,7 +14,7 @@ public class PlayerController {
     }
 
     //Metode der flytter spiller
-    public void movePlayer (int positon ){
+    public void movePlayer (int positon){
         this.currentPlayer.setPosition(positon);
 
     }

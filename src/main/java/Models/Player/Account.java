@@ -18,6 +18,7 @@ public class Account {
         balance += fieldValue;
     }
 
+
     public int getBalance (){
         return balance;
     }
