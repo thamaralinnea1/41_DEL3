@@ -1,5 +1,7 @@
 package Models.Board;
 
+import java.net.BindException;
+
 public class Board {
     public Field[] field = new Field[24];
 
@@ -33,5 +35,7 @@ public class Board {
 
     }
 
-
+    public Field getField(int index) {
+        return field[index];
+    }
 }

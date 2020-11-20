@@ -71,9 +71,18 @@ public class Field {
         this.colour = colour;
     }
 
+//    public String toString() {
+//        return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
+//    }
+
+
+    @Override
     public String toString() {
-        return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
-
-
+        return
+                " title = " + title + '\'' +
+                ",\n price = " + price +
+                ", payRent = " + payRent +
+                ",\n propertyOwner = " + propertyOwner +
+                ",\n colour = " + colour;
     }
 }

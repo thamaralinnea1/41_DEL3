@@ -12,52 +12,56 @@ public class GameController {
     public PlayerController playerController;
     public Board board;
     public Die die;
-
+    public BoardController boardController;
 
 
     public GameController() {
         this.board = new Board();
         this.die = new Die();
+        this.boardController = new BoardController();
 
-    playerController = new PlayerController(4);
+        playerController = new PlayerController(4);
 
     }
+
     // returnere felt spilleren står på
-    public Field getCurrentField(Player currentPlayer){
+    public Field getCurrentField(Player currentPlayer) {
         return this.board.field[currentPlayer.getPosition()];
     }
 
-    public boolean canBuyField (Player currentPlayer){
+    public boolean canBuyField(Player currentPlayer) {
         Field currentField = getCurrentField(currentPlayer);
         return currentField.getPropertyOwner() == null;
 
     }
 
     //Returne om hvis balance er større end field price
-    public boolean checkAccount (Player currentPlayer, Field currentField) {
+    public boolean checkAccount(Player currentPlayer, Field currentField) {
         return currentPlayer.getAccount().getBalance() >= currentField.getPrice();
 
 
     }
+
     // Sætter currentspiller til FieldOwner og trækker feltets værdi fra spillerens account
-    public void  buyField (Player currentPlayer){
+    public void buyField(Player currentPlayer) {
         Field currentField = getCurrentField(currentPlayer);
         currentField.setPropertyOwner(currentPlayer);
         currentPlayer.getAccount().addPoint(-currentField.getPrice());
 
     }
 
-    public boolean gameEnd (PlayerController pc){
-       boolean gameEnd = false;
+    public boolean gameEnd(PlayerController pc) {
+        boolean gameEnd = false;
         for (int i = 0; i < pc.getNumPlayers(); i++) {
             if (pc.getPlayer(i).getAccount().getBalance() <= 0)
                 gameEnd = true;
         }
         return gameEnd;
     }
+
     // gameloop
     // ! -> ikke
-    public void runGame (){
+    public void runGame() {
         Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
 
@@ -67,7 +71,7 @@ public class GameController {
             playerController.getPlayer(i).setName(name);
         }
 
-        while (!gameEnd(playerController)){
+        while (!gameEnd(playerController)) {
             // hvilken spiller vi har fat i
             Player p = playerController.getCurrentPlayer();
             System.out.println("start runde " + p.getName() + " tryk enter");
@@ -77,10 +81,11 @@ public class GameController {
             //bevæger spiller med terningekast.
             p.movePlayer(die.roll());
             System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
+            boardController.landedOn(p, board);
             playerController.switchPlayer();
 
         }
+
+
     }
-
-
 }
