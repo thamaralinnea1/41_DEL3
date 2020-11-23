@@ -72,7 +72,7 @@ public class Field {
     }
 
 //    public String toString() {
-//        return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
+//   return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
 //    }
 
 

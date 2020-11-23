@@ -1,6 +1,7 @@
 package Models.Player;
 
 public class Account {
+
     protected int balance;
 
 
