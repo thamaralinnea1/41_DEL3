@@ -9,6 +9,8 @@ import Models.Player.Player;
 import java.util.Scanner;
 
 public class GameController {
+
+
     public PlayerController playerController;
     public Board board;
     public Die die;
@@ -20,7 +22,7 @@ public class GameController {
         this.die = new Die();
         this.boardController = new BoardController();
 
-        playerController = new PlayerController(4);
+        playerController = new PlayerController(2);
 
     }
 
@@ -63,6 +65,7 @@ public class GameController {
     // gameloop
     // ! -> ikke
     public void runGame() {
+
         Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
 

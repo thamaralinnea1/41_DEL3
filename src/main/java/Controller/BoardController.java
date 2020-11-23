@@ -9,6 +9,7 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class BoardController {
+
     public void landedOn(Player p, Board board){
         int position = p.getPosition();
         Field field =board.getField(position);
