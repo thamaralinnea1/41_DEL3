@@ -48,6 +48,7 @@ public class GameController {
         currentField.setPropertyOwner(currentPlayer);
         currentPlayer.getAccount().addPoint(-currentField.getPrice());
 
+
     }
 
     public boolean gameEnd(PlayerController pc) {

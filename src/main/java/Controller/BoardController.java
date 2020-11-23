@@ -40,7 +40,15 @@ public class BoardController {
         fields[12] = new GUI_Empty(Color.WHITE , Color.BLACK , "Parkering" , "Gratis" , " Du er landet på gratis parkering, tag en pause. ");
         fields[13] = new GUI_Street("Spillehallen" , " 3 M " , " Du er ankommet til spillehallen " , " 3 M " , Color.RED , Color.BLACK);
         fields[14] = new GUI_Street("Biografen" , " 3 M " , " Du er landet på Biografen " , " 3 M " , Color.RED, Color.BLACK);
-
+        fields[15] = new GUI_Chance("Chance", " ", "Tag chancen", Color.white, Color.BLACK);
+        fields[16] = new GUI_Street("Legetøjsbutikken", "3 M", "Du landede på Legetøjsbutikken", "3", Color.YELLOW, Color.BLACK);
+        fields[17] = new GUI_Street("Dyrehandlen", "3 M", "Du landede på Dyrehandlen", "3", Color.YELLOW, Color.BLACK);
+        fields[18] = new GUI_Jail("Ryk i fængsel", "Ryk i fængsel", " ", "Ryk i fængsel", Color.WHITE, Color.BLACK);
+        fields[19] = new GUI_Street("Bowlinghallen", "4 M", "Du landede på Bowlinghallen", "4", Color.GREEN, Color.BLACK);
+        fields[20] = new GUI_Street("Zoologisk Have", "4 M", "Du landede Zoologisk Have", "4", Color.GREEN, Color.BLACK);
+        fields[21] = new GUI_Chance("Chance", " ", "Du landede på et chancefelt", Color.white, Color.BLACK);
+        fields[22] = new GUI_Street("Vandlandet", "5 M", "Du landede på Vandlandet", "5", Color.BLUE, Color.BLACK);
+        fields[23] = new GUI_Street("Strandpromenaden", "5 M", "Du landede på Strandpromenaden", "5", Color.BLUE, Color.BLACK);
         GUI GUIBoard = new GUI(fields);
 
 
