@@ -16,7 +16,7 @@ public class Account {
     }
 
     public void addPoint(int fieldValue) {
-        balance += fieldValue;
+        balance +=  fieldValue;
     }
 
 
