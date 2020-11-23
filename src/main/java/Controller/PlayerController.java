@@ -1,11 +1,13 @@
 package Controller;
 
 import Models.Player.Player;
+import gui_fields.GUI_Player;
 
 public class PlayerController {
     private Player currentPlayer;
     private Player[] playerList;
     private int currentPlayerId;
+    private GUI_Player[] gui_players;
 
     public PlayerController(int amountOfPlayers) {
         this.playerList = new Player[amountOfPlayers];

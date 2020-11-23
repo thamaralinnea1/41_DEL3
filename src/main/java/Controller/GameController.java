@@ -67,10 +67,12 @@ public class GameController {
         playerController.setCurrentPlayer(0);
 
         for (int i = 0; i < playerController.getNumPlayers(); i++) {
+            //brug i stedet GUI i stedet for terminal. få fat i den gennem boardcontroller.
             System.out.println(" Angiv dit navn ");
             String name = scanner.nextLine();
             playerController.getPlayer(i).setName(name);
         }
+        //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
 
         while (!gameEnd(playerController)) {
             // hvilken spiller vi har fat i
