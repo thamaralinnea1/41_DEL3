@@ -22,7 +22,7 @@ public class GameController {
         this.die = new Die();
         this.boardController = new BoardController();
 
-        playerController = new PlayerController(2);
+        playerController = new PlayerController(4);
 
     }
 
