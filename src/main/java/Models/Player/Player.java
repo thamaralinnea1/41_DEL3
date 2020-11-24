@@ -1,6 +1,8 @@
 package Models.Player;
 
 public class Player {
+
+
     private String name;
     private int position;
     private final int MaxPlayers = 4;

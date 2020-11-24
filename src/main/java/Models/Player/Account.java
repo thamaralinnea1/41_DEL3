@@ -1,6 +1,7 @@
 package Models.Player;
 
 public class Account {
+
     protected int balance;
 
 
@@ -15,7 +16,7 @@ public class Account {
     }
 
     public void addPoint(int fieldValue) {
-        balance += fieldValue;
+        balance +=  fieldValue;
     }
 
 
