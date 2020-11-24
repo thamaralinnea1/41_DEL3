@@ -3,6 +3,8 @@ package Models.Board;
 import Models.Player.Player;
 
 public class Field {
+
+
     protected int fieldId;
     private String title;
     private int price,payRent;
@@ -72,7 +74,7 @@ public class Field {
     }
 
 //    public String toString() {
-//        return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
+//   return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
 //    }
 
 

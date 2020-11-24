@@ -5,6 +5,8 @@ import Models.Board.Die;
 import Models.Board.Field;
 import Models.Player.Account;
 import Models.Player.Player;
+import gui_fields.GUI_Player;
+import gui_main.GUI;
 
 import java.util.Scanner;
 
@@ -63,14 +65,19 @@ public class GameController {
     // gameloop
     // ! -> ikke
     public void runGame() {
-        Scanner scanner = new Scanner(System.in);
+        GUI gui = boardController.getGUIBoard();
+        //Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
 
         for (int i = 0; i < playerController.getNumPlayers(); i++) {
             //brug i stedet GUI i stedet for terminal. få fat i den gennem boardcontroller.
             System.out.println(" Angiv dit navn ");
-            String name = scanner.nextLine();
+            //String name = scanner.nextLine();
+            //Hent brugerens navn og gem det.
+            String name = gui.getUserString("Angiv dit navn");
             playerController.getPlayer(i).setName(name);
+            GUI_Player player = new GUI_Player(name);
+            gui.addPlayer(player);
         }
         //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
 
@@ -78,7 +85,8 @@ public class GameController {
             // hvilken spiller vi har fat i
             Player p = playerController.getCurrentPlayer();
             System.out.println("start runde " + p.getName() + " tryk enter");
-            scanner.nextLine();
+            //scanner.nextLine();
+            gui.getUserButtonPressed("Tryk på knappen" , "OK");
             System.out.println(p.getPosition() + " nuværende position ");
 
             //bevæger spiller med terningekast.

@@ -9,6 +9,10 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class BoardController {
+
+    private GUI GUIBoard;
+
+
     public void landedOn(Player p, Board board){
         int position = p.getPosition();
         Field field =board.getField(position);
@@ -55,11 +59,16 @@ public class BoardController {
         fields[21] = new GUI_Chance();
         fields[22] = new GUI_Street("Vandlandet", "5 M", "Du landede på Vandlandet", "5", Color.BLUE, Color.BLACK);
         fields[23] = new GUI_Street("Strandpromenaden", "5 M", "Du landede på Strandpromenaden", "5", Color.BLUE, Color.BLACK);
-        GUI GUIBoard = new GUI(fields);
+
+        GUIBoard = new GUI(fields);
+
 
 
         GUIBoard.setDie(1);
 
     }
 
+    public GUI getGUIBoard() {
+        return GUIBoard;
+    }
 }
