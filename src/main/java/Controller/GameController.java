@@ -6,6 +6,7 @@ import Models.Board.Field;
 import Models.Player.PieceSelector;
 import Models.Player.Player;
 import gui_fields.GUI_Car;
+import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
@@ -68,6 +69,7 @@ public class GameController {
     // ! -> ikke
     public void runGame() {
         GUI gui = boardController.getGUIBoard();
+        GUI_Field[] fields = gui.getFields();
         //Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
 
@@ -78,10 +80,14 @@ public class GameController {
             //Hent brugerens navn og gem det.
             String name = gui.getUserString("Angiv dit navn");
             playerController.getPlayer(i).setName(name);
-
             GUI_Car car = pieceSelector.pieceselect();
             GUI_Player player = new GUI_Player(name, 20, car);
+            playerController.setGUIPlayer(i, player);
             gui.addPlayer(player);
+            GUI_Field startField = fields[0];
+            startField.setCar(player, true);
+            // eller gui.getFields()[0].setCar(player , true);
+
 
         }
         //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
@@ -89,15 +95,20 @@ public class GameController {
         while (!gameEnd(playerController)) {
             // hvilken spiller vi har fat i
             Player p = playerController.getCurrentPlayer();
+            GUI_Player gui_p = playerController.getCurrentGUIPlayer();
             System.out.println("start runde " + p.getName() + " tryk enter");
             //scanner.nextLine();
             gui.getUserButtonPressed("Tryk på knappen" , "OK");
             System.out.println(p.getPosition() + " nuværende position ");
+            int oldPosition = p.getPosition();
 
             //bevæger spiller med terningekast.
             int roll = die.roll();
             p.movePlayer(roll);
             gui.setDie(roll);
+            int newPosition = p.getPosition();
+            fields[oldPosition].setCar(gui_p, false);
+            fields[newPosition].setCar(gui_p , true);
             System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
             boardController.landedOn(p, board);
             playerController.switchPlayer();

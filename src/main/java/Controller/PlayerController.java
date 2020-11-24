@@ -6,11 +6,13 @@ import gui_fields.GUI_Player;
 public class PlayerController {
     private Player currentPlayer;
     private Player[] playerList;
+    private GUI_Player[] guiPlayerList;
     private int currentPlayerId;
     private GUI_Player[] gui_players;
 
     public PlayerController(int amountOfPlayers) {
         this.playerList = new Player[amountOfPlayers];
+        this.guiPlayerList = new GUI_Player[amountOfPlayers];
         this.currentPlayerId = 0;
 
         // opretter spillere og ligger dem i spillerliste
@@ -30,6 +32,15 @@ public class PlayerController {
         this.currentPlayer.setPosition(positon);
 
     }
+
+    public GUI_Player getCurrentGUIPlayer(){
+        return guiPlayerList[currentPlayerId];
+    }
+
+    public void setGUIPlayer(int playerIndex, GUI_Player gui_player){
+        guiPlayerList[playerIndex] = gui_player;
+    }
+
 
     //CurrentPlayer øges med 1. Modulus bruges så current player ikke kan overskride arraylist.
     public Player switchPlayer(){
