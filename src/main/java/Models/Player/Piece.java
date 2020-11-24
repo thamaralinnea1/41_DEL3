@@ -1,9 +1,12 @@
 package Models.Player;
 
+import gui_main.GUI;
+
 import java.util.Scanner;
 
 public class Piece {
 
+    public GUI gui;
     protected boolean bilLock = false;
     protected boolean racerbilLock = false;
     protected boolean traktorLock = false;
@@ -11,10 +14,10 @@ public class Piece {
 
 
     public void pieceselect() {
-        System.out.println("Tryk 1 for at være Bilen \nTryk 2 for at være Racerbilen \nTryk 3 for at være Traktoren \nTryk 4 for at være UFO'en");
+        gui.showMessage("Tryk 1 for at være Bilen \nTryk 2 for at være Racerbilen \nTryk 3 for at være Traktoren \nTryk 4 for at være UFO'en");
 
         while (true) {
-            System.out.println("Vælg din brik");
+            gui.showMessage("Vælg din brik");
             Scanner scan = new Scanner(System.in);
             String characterSelect = scan.nextLine();
 
@@ -22,26 +25,26 @@ public class Piece {
             if (characterSelect.equals("1")) {
                 if (!bilLock) {
                     this.bilLock = true;
-                    System.out.println("Du har valgt Bilen");
+                    gui.showMessage("Du har valgt Bilen");
 
                     break;
                 }
             }
             if (bilLock && characterSelect.equals("1")) {
-                System.out.println("Bilen er allerede taget");
+                gui.showMessage("Bilen er allerede taget");
                 continue;
             }
 
             if (characterSelect.equals("2")) {
                 if (!racerbilLock) {
                     this.racerbilLock = true;
-                    System.out.println("Du har valgt Racerbilen");
+                    gui.showMessage("Du har valgt Racerbilen");
                     break;
 
                 }
             }
             if (racerbilLock && characterSelect.equals("2")) {
-                System.out.println("Racerbilen er allerede taget");
+                gui.showMessage("Racerbilen er allerede taget");
 
                 continue;
             }
@@ -49,26 +52,26 @@ public class Piece {
             if (characterSelect.equals("3")) {
                 if (!traktorLock) {
                     this.traktorLock = true;
-                    System.out.println("Du har valgt Traktoren");
+                    gui.showMessage("Du har valgt Traktoren");
 
                     break;
                 }
             }
             if (traktorLock && characterSelect.equals("3")) {
-                System.out.println("Traktoren er allerede taget");
+                gui.showMessage("Traktoren er allerede taget");
                 continue;
             }
 
             if (characterSelect.equals("4")) {
                 if (!ufoLock) {
                     this.ufoLock = true;
-                    System.out.println("Du har valgt UFO'en");
+                    gui.showMessage("Du har valgt UFO'en");
 
                     break;
                 }
             }
             if (ufoLock && characterSelect.equals("4")) {
-                System.out.println("UFO'en er allerede taget");
+                gui.showMessage("UFO'en er allerede taget");
             }
         }
     }
