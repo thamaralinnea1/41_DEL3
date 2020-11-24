@@ -94,6 +94,7 @@ public class GameController {
             gui.getUserButtonPressed("Tryk på knappen" , "OK");
             System.out.println(p.getPosition() + " nuværende position ");
 
+
             //bevæger spiller med terningekast.
             int roll = die.roll();
             p.movePlayer(roll);
