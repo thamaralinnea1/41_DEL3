@@ -82,6 +82,7 @@ public class GameController {
             GUI_Car car = pieceSelector.pieceselect();
             GUI_Player player = new GUI_Player(name, 20, car);
             gui.addPlayer(player);
+
         }
         //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
 
@@ -94,7 +95,9 @@ public class GameController {
             System.out.println(p.getPosition() + " nuværende position ");
 
             //bevæger spiller med terningekast.
-            p.movePlayer(die.roll());
+            int roll = die.roll();
+            p.movePlayer(roll);
+            gui.setDie(roll);
             System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
             boardController.landedOn(p, board);
             playerController.switchPlayer();
