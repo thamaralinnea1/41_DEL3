@@ -4,7 +4,9 @@ import Models.Board.Board;
 import Models.Board.Die;
 import Models.Board.Field;
 import Models.Player.Account;
+import Models.Player.Piece;
 import Models.Player.Player;
+import gui_fields.GUI_Car;
 
 import java.util.Scanner;
 
@@ -15,12 +17,14 @@ public class GameController {
     public Board board;
     public Die die;
     public BoardController boardController;
+    private Piece piece;
 
 
     public GameController() {
         this.board = new Board();
         this.die = new Die();
         this.boardController = new BoardController();
+        this.piece = new Piece();
 
         playerController = new PlayerController(4);
 
@@ -74,6 +78,8 @@ public class GameController {
             System.out.println(" Angiv dit navn ");
             String name = scanner.nextLine();
             playerController.getPlayer(i).setName(name);
+
+            GUI_Car player_piece = piece.pieceselect(name);
         }
         //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
 
