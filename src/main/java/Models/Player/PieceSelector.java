@@ -5,7 +5,7 @@ import gui_main.GUI;
 
 import java.awt.*;
 
-public class Piece {
+public class PieceSelector {
 
     public GUI gui;
 
@@ -14,13 +14,16 @@ public class Piece {
     protected boolean traktorLock = false;
     protected boolean ufoLock = false;
 
+    public PieceSelector(GUI guiBoard){
+        this.gui = guiBoard;
+    }
 
-    public GUI_Car pieceselect(String name) {
+
+    public GUI_Car pieceselect() {
 
         gui.showMessage("Tryk 1 for at være Bilen \nTryk 2 for at være Racerbilen \nTryk 3 for at være Traktoren \nTryk 4 for at være UFO'en");
 
         while (true) {
-            gui.showMessage("Vælg din brik");
             String characterSelect = gui.getUserButtonPressed("Vælg bil Tryk 1 for at være bilLock  ELLER Tryk 2 for at være Racerbilen ELLER Tryk 3 for at være Traktoren ELLER Tryk 4 for at være UFO'en ", "1", "2", "3", "4");
 
 
@@ -87,9 +90,6 @@ public class Piece {
 
     }
 
-    public void setGUI(GUI gui){
-        this.gui = gui;
-    }
 
 }
 

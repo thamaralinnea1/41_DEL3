@@ -3,28 +3,26 @@ package Controller;
 import Models.Board.Board;
 import Models.Board.Die;
 import Models.Board.Field;
-import Models.Player.Account;
-import Models.Player.Piece;
+import Models.Player.PieceSelector;
 import Models.Player.Player;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-
-import java.util.Scanner;
 
 public class GameController {
     public PlayerController playerController;
     public Board board;
     public Die die;
     public BoardController boardController;
-    private Piece piece;
+    private PieceSelector pieceSelector;
 
 
     public GameController() {
         this.board = new Board();
         this.die = new Die();
         this.boardController = new BoardController();
-        this.piece = new Piece();
+        this.pieceSelector = new PieceSelector(boardController.getGUIBoard());
+
 
         playerController = new PlayerController(4);
 
@@ -80,7 +78,9 @@ public class GameController {
             //Hent brugerens navn og gem det.
             String name = gui.getUserString("Angiv dit navn");
             playerController.getPlayer(i).setName(name);
-            GUI_Player player = new GUI_Player(name);
+
+            GUI_Car car = pieceSelector.pieceselect();
+            GUI_Player player = new GUI_Player(name, 20, car);
             gui.addPlayer(player);
         }
         //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
