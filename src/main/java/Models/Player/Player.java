@@ -34,8 +34,6 @@ public class Player {
     //max 24 felter
     public void movePlayer (int moveAmmount){
         setPosition((getPosition() + moveAmmount)%24);
-
-
     }
 
     public void setPosition(int newPosition){
