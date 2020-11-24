@@ -3,6 +3,8 @@ package Models.Board;
 import Models.Player.Player;
 
 public class Field {
+
+
     protected int fieldId;
     private String title;
     private int price,payRent;
