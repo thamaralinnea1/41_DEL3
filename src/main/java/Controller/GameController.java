@@ -74,19 +74,14 @@ public class GameController {
         playerController.setCurrentPlayer(0);
 
         for (int i = 0; i < playerController.getNumPlayers(); i++) {
-            //brug i stedet GUI i stedet for terminal. få fat i den gennem boardcontroller.
-            System.out.println(" Angiv dit navn ");
-            //String name = scanner.nextLine();
-            //Hent brugerens navn og gem det.
+
             String name = gui.getUserString("Angiv dit navn");
             playerController.getPlayer(i).setName(name);
             GUI_Car car = pieceSelector.pieceselect();
             GUI_Player player = new GUI_Player(name, 20, car);
             playerController.setGUIPlayer(i, player);
             gui.addPlayer(player);
-            GUI_Field startField = fields[0];
-            startField.setCar(player, true);
-            // eller gui.getFields()[0].setCar(player , true);
+            gui.getFields()[0].setCar(player , true);
 
 
         }
