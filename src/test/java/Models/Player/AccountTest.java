@@ -7,14 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class AccountTest {
 
     @Test
-    void setAccount() {
+    void Account() {
+        Account account = new Account(1000);
+        assertEquals(1000, account.balance);
     }
 
-    @Test
-    void addPoint() {
-    }
-
-    @Test
-    void getBalance() {
-    }
 }

@@ -7,26 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerTest {
 
     @Test
-    void setName() {
+    public void currentPlayer() {
+        Player player = new Player("Najib",0,20);
+        assertEquals("Najib", player.getName());
+        assertEquals(0, player.getPosition());
+        assertEquals(20, player.getAccount().getBalance());
+
     }
 
-    @Test
-    void getName() {
-    }
-
-    @Test
-    void getPosition() {
-    }
-
-    @Test
-    void movePlayer() {
-    }
-
-    @Test
-    void setPosition() {
-    }
-
-    @Test
-    void getAccount() {
-    }
 }
