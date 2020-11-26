@@ -8,8 +8,8 @@ class AccountTest {
 
     @Test
     void Account() {
-        Account account = new Account(1000);
-        assertEquals(1000, account.balance);
+        Account account = new Account(20);
+        assertEquals(20, account.balance);
     }
 
 

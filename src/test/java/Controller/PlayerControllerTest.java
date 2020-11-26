@@ -1,13 +1,13 @@
-package Models.Player;
+package Controller;
 
+import Models.Player.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PlayerTest {
-
+class PlayerControllerTest {
     @Test
-    public void currentPlayer() {
+    public void PlayerController() {
         Player player = new Player("Najib",0,20);
         assertEquals("Najib", player.getName());
         assertEquals(0, player.getPosition());
@@ -31,3 +31,6 @@ class PlayerTest {
 //    }
 
 }
+
+
+
