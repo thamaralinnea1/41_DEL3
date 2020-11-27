@@ -31,7 +31,7 @@ public class PieceSelector {
                 if (!bilLock) {
                     this.bilLock = true;
                     gui.showMessage("Du har valgt Bilen");
-                    GUI_Car car = new GUI_Car(Color.blue, Color.CYAN, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
+                    GUI_Car car = new GUI_Car(Color.BLACK, Color.red, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
                     return car;
                 }
             }
@@ -60,7 +60,7 @@ public class PieceSelector {
                 if (!traktorLock) {
                     this.traktorLock = true;
                     gui.showMessage("Du har valgt Traktoren");
-                    GUI_Car traktoren = new GUI_Car(Color.GREEN, Color.cyan, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.DOTTED);
+                    GUI_Car traktoren = new GUI_Car(Color.GREEN, Color.PINK, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.DOTTED);
 
                     return traktoren;
 
@@ -75,7 +75,7 @@ public class PieceSelector {
                 if (!ufoLock) {
                     this.ufoLock = true;
                     gui.showMessage("Du har valgt UFO'en");
-                    GUI_Car ufo = new GUI_Car(Color.PINK, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
+                    GUI_Car ufo = new GUI_Car(Color.WHITE, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
 
                     return ufo;
 
