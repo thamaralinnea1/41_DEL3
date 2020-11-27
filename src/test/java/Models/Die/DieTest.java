@@ -1,5 +1,6 @@
-package Models.Board;
+package Models.Die;
 
+import Models.Board.Die;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
