@@ -75,12 +75,10 @@ public class GameController {
         return gameEnd;
     }
 
-    // gameloop
-    // ! -> ikke
+    // //gameloop
     public void runGame() {
 
         GUI_Field[] fields = gui.getFields();
-        //Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
 
 
@@ -97,8 +95,7 @@ public class GameController {
 
 
         }
-        //i et forloop gennemgås modelspillerne. find deres navne opret GUI spiller med samme navne. GUIspillerne gives til controlleren.
-
+        // ! -> ikke
         while (!gameEnd(playerController)) {
             // hvilken spiller vi har fat i
             Player p = playerController.getCurrentPlayer();
