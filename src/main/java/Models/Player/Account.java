@@ -2,7 +2,7 @@ package Models.Player;
 
 public class Account {
 
-    protected int balance;
+    private int balance;
 
 
     //set balance to startbalance
@@ -19,8 +19,12 @@ public class Account {
         balance +=  fieldValue;
     }
 
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
 
     public int getBalance (){
+
         return balance;
     }
 }

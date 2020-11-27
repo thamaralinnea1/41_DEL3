@@ -8,9 +8,13 @@ class AccountTest {
 
     @Test
     void Account() {
-        Account account = new Account(20);
-        assertEquals(20, account.balance);
+        for (int i = 0; i < 100; i++) {
+            Account account = new Account(i*20);
+            assertEquals(i*20, account.getBalance());
+
+        }
     }
+
 
 
 }
