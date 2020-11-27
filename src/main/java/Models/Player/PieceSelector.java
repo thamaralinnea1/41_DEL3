@@ -21,7 +21,7 @@ public class PieceSelector {
 
     public GUI_Car pieceselect() {
 
-        gui.showMessage("Tryk 1 for at være Bilen \nTryk 2 for at være Racerbilen \nTryk 3 for at være Traktoren \nTryk 4 for at være UFO'en");
+        //gui.showMessage("Tryk 1 for at være Bilen \nTryk 2 for at være Racerbilen \nTryk 3 for at være Traktoren \nTryk 4 for at være UFO'en");
 
         while (true) {
             String characterSelect = gui.getUserButtonPressed("Vælg bil Tryk 1 for at være bilLock  ELLER Tryk 2 for at være Racerbilen ELLER Tryk 3 for at være Traktoren ELLER Tryk 4 for at være UFO'en ", "1", "2", "3", "4");
@@ -31,7 +31,7 @@ public class PieceSelector {
                 if (!bilLock) {
                     this.bilLock = true;
                     gui.showMessage("Du har valgt Bilen");
-                    GUI_Car car = new GUI_Car(Color.blue, Color.blue, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
+                    GUI_Car car = new GUI_Car(Color.BLACK, Color.red, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
                     return car;
                 }
             }
@@ -60,7 +60,7 @@ public class PieceSelector {
                 if (!traktorLock) {
                     this.traktorLock = true;
                     gui.showMessage("Du har valgt Traktoren");
-                    GUI_Car traktoren = new GUI_Car(Color.GREEN, Color.cyan, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.DOTTED);
+                    GUI_Car traktoren = new GUI_Car(Color.GREEN, Color.PINK, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.DOTTED);
 
                     return traktoren;
 
@@ -75,7 +75,7 @@ public class PieceSelector {
                 if (!ufoLock) {
                     this.ufoLock = true;
                     gui.showMessage("Du har valgt UFO'en");
-                    GUI_Car ufo = new GUI_Car(Color.PINK, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
+                    GUI_Car ufo = new GUI_Car(Color.WHITE, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
 
                     return ufo;
 

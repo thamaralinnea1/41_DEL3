@@ -28,7 +28,6 @@ public class GameController {
         this.boardController = new BoardController();
         gui = boardController.getGUIBoard();
 
-        //gui.showMessage("Vægl mellem 2 til 4 spiler og så");
 
         int playeramunt = Integer.parseInt(gui.getUserButtonPressed("Vægler antal af spiller","2","3","4"));
 
@@ -77,6 +76,8 @@ public class GameController {
 
     // //gameloop
     public void runGame() {
+
+        playerChoice();
 
         GUI_Field[] fields = gui.getFields();
         playerController.setCurrentPlayer(0);
@@ -128,5 +129,14 @@ public class GameController {
 
         Player p = playerController.getCurrentPlayer();
         gui.showMessage("Du har vundet" +" "+ p.getName());
+
+    }
+
+    public void playerChoice(){
+       String value = gui.getUserButtonPressed("Tryk slut spil for at slutte spillet, eller tryk nyt spil for at starte nyt spil ","Slut spil","Nyt Spil");
+       if (value == "Slut spil"){
+           System.exit(0);
+       }
+
     }
 }
