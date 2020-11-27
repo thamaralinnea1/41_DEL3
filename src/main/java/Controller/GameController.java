@@ -68,7 +68,7 @@ public class GameController {
     public boolean gameEnd(PlayerController pc) {
         boolean gameEnd = false;
         for (int i = 0; i < pc.getNumPlayers(); i++) {
-            if (pc.getPlayer(i).getAccount().getBalance() >=25)
+            if (pc.getPlayer(i).getAccount().getBalance() >=30)
                 gameEnd = true;
         }
         return gameEnd;
