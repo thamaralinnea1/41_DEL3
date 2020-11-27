@@ -137,7 +137,7 @@ public class GameController {
 
     public void playerChoice(){
        String value = gui.getUserButtonPressed("Tryk slut spil for at slutte spillet, eller tryk nyt spil for at starte nyt spil ","Slut spil","Nyt Spil");
-       if (value == "Sluk"){
+       if (value == "Slut spil"){
            System.exit(0);
        }
 
