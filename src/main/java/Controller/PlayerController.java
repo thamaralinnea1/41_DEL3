@@ -17,7 +17,7 @@ public class PlayerController {
 
         // opretter spillere og ligger dem i spillerliste
         for (int i = 0; i < amountOfPlayers; i++) {
-            Player player = new Player("player " + i,0,2);
+            Player player = new Player("player " + i,0,20);
             playerList[i] = player;
         }
 

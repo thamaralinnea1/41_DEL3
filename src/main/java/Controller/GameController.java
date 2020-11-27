@@ -25,7 +25,7 @@ public class GameController {
         this.pieceSelector = new PieceSelector(boardController.getGUIBoard());
 
 
-        playerController = new PlayerController(4);
+        playerController = new PlayerController(2);
 
     }
 
@@ -59,7 +59,7 @@ public class GameController {
     public boolean gameEnd(PlayerController pc) {
         boolean gameEnd = false;
         for (int i = 0; i < pc.getNumPlayers(); i++) {
-            if (pc.getPlayer(i).getAccount().getBalance() <= 0)
+            if (pc.getPlayer(i).getAccount().getBalance() >=25)
                 gameEnd = true;
         }
         return gameEnd;
@@ -100,6 +100,11 @@ public class GameController {
 
             //bevæger spiller med terningekast.
             int roll = die.roll();
+            if(die.getFaceValue() + p.getPosition() >= 23) {
+                int newBalance = p.getAccount().getBalance() + 2;
+                gui_p.setBalance(newBalance);
+                p.getAccount().setBalance(newBalance);
+            }
             p.movePlayer(roll);
             gui.setDie(roll);
             int newPosition = p.getPosition();
@@ -107,10 +112,11 @@ public class GameController {
             fields[newPosition].setCar(gui_p , true);
             System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
             boardController.landedOn(p, board);
-            playerController.switchPlayer();
 
+            playerController.switchPlayer();
         }
 
-
+        Player p = playerController.getCurrentPlayer();
+        gui.showMessage("Du har vundet" +" "+ p.getName());
     }
 }
