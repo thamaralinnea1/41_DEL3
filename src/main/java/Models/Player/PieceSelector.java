@@ -31,7 +31,7 @@ public class PieceSelector {
                 if (!bilLock) {
                     this.bilLock = true;
                     gui.showMessage("Du har valgt Bilen");
-                    GUI_Car car = new GUI_Car(Color.blue, Color.blue, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
+                    GUI_Car car = new GUI_Car(Color.blue, Color.CYAN, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
                     return car;
                 }
             }
