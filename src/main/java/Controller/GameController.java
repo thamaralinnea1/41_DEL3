@@ -41,7 +41,7 @@ public class GameController {
 
     // returnere felt spilleren står på
     public Field getCurrentField(Player currentPlayer) {
-        return this.board.field[currentPlayer.getPosition()];
+        return this.board.fields[currentPlayer.getPosition()];
     }
 
     public boolean canBuyField(Player currentPlayer) {
@@ -118,6 +118,7 @@ public class GameController {
                 p.getAccount().setBalance(newBalance);
             }
             p.movePlayer(roll);
+            playerController.switchPlayer();
             gui.setDie(roll);
             int newPosition = p.getPosition();
             fields[oldPosition].setCar(gui_p, false);
@@ -125,7 +126,7 @@ public class GameController {
             System.out.println(p.getPosition() + " ny position " + "har kastet en " + die.getFaceValue());
             boardController.landedOn(p, board);
 
-            playerController.switchPlayer();
+
         }
 
         Player p = playerController.getCurrentPlayer();

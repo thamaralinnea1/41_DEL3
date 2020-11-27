@@ -13,6 +13,7 @@ public class BoardController {
     private GUI GUIBoard;
 
 
+
     public void landedOn(Player p, Board board){
         int position = p.getPosition();
         Field field =board.getField(position);
