@@ -6,15 +6,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DieTest {
 
-    @Test
-    void roll() {
-    }
 
     @Test
-    void getFaceValue() {
-    }
+    public void roll() {
+        Die die = new Die();
 
-    @Test
-    void testToString() {
+        int loops = 100;
+        int[] faces = new int[6];
+        for (int i = 0; i < loops; i++) {
+            faces[die.roll() - 1]++;
+        }
+
+
+
+
     }
 }
