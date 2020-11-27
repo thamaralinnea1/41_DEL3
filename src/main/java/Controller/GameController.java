@@ -35,7 +35,7 @@ public class GameController {
         this.pieceSelector = new PieceSelector(boardController.getGUIBoard());
 
 
-        playerController = new PlayerController(2);
+        playerController = new PlayerController(playeramunt);
 
     }
 
