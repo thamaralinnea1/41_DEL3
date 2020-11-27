@@ -29,12 +29,12 @@ public class GameController {
         gui = boardController.getGUIBoard();
 
 
-        int playeramunt = Integer.parseInt(gui.getUserButtonPressed("Vægler antal af spiller","2","3","4"));
+        int playerAmount = Integer.parseInt(gui.getUserButtonPressed("Vælg antal af spillere","2","3","4"));
 
         this.pieceSelector = new PieceSelector(boardController.getGUIBoard());
 
 
-        playerController = new PlayerController(playeramunt);
+        playerController = new PlayerController(playerAmount);
 
     }
 
