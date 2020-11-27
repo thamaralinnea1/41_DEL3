@@ -16,16 +16,26 @@ public class GameController {
     public Die die;
     public BoardController boardController;
     private PieceSelector pieceSelector;
+    private GUI gui ;
+
 
 
     public GameController() {
+
+
         this.board = new Board();
         this.die = new Die();
         this.boardController = new BoardController();
+        gui = boardController.getGUIBoard();
+
+        //gui.showMessage("Vægl mellem 2 til 4 spiler og så");
+
+        int playeramunt = Integer.parseInt(gui.getUserButtonPressed("Vægler antal af spiller","2","3","4"));
+
         this.pieceSelector = new PieceSelector(boardController.getGUIBoard());
 
 
-        playerController = new PlayerController(4);
+        playerController = new PlayerController(playeramunt);
 
     }
 
@@ -68,10 +78,12 @@ public class GameController {
     // gameloop
     // ! -> ikke
     public void runGame() {
-        GUI gui = boardController.getGUIBoard();
+
         GUI_Field[] fields = gui.getFields();
         //Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
+
+
 
         for (int i = 0; i < playerController.getNumPlayers(); i++) {
             //brug i stedet GUI i stedet for terminal. få fat i den gennem boardcontroller.
