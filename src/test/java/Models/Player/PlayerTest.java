@@ -12,23 +12,20 @@ class PlayerTest {
         assertEquals("Najib", player.getName());
         assertEquals(0, player.getPosition());
         assertEquals(20, player.getAccount().getBalance());
-        assertEquals(0, player.getPosition());
-        assertEquals(0, player.getPosition());
+
 
     }
 
-//    @Test
-//    public void movePlayer() {
-//        Player player1 = new Player("Najib", 0,20);
-//        player1.movePlayer(10);
-//        assertEquals(10, player1.getPosition());
-//        assertEquals(10,0);
-//        assertFalse();
-//        player1.movePlayer(20);
-//        assertEquals(6, player1.setPosition(););
-//        assertEquals(10, player1.previousFelt);
-//        assertTrue(player1.passedStart);
-//    }
+    @Test
+    public void movePlayer() {
+        Player player1 = new Player("Najib", 0,20);
+        player1.movePlayer(10);
+        assertEquals(10, player1.getPosition());
+
+        player1.movePlayer(20);
+        assertEquals(6,player1.getPosition());
+
+    }
 
 }
 
