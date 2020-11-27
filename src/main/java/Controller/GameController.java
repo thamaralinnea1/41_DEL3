@@ -78,6 +78,8 @@ public class GameController {
     // ! -> ikke
     public void runGame() {
 
+        playerChoice();
+
         GUI_Field[] fields = gui.getFields();
         //Scanner scanner = new Scanner(System.in);
         playerController.setCurrentPlayer(0);
@@ -130,5 +132,14 @@ public class GameController {
 
         Player p = playerController.getCurrentPlayer();
         gui.showMessage("Du har vundet" +" "+ p.getName());
+
+    }
+
+    public void playerChoice(){
+       String value = gui.getUserButtonPressed("Tryk slut spil for at slutte spillet, eller tryk nyt spil for at starte nyt spil ","Slut spil","Nyt Spil");
+       if (value == "Sluk"){
+           System.exit(0);
+       }
+
     }
 }
