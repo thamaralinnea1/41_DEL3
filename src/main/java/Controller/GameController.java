@@ -28,7 +28,6 @@ public class GameController {
         this.boardController = new BoardController();
         gui = boardController.getGUIBoard();
 
-        //gui.showMessage("Vægl mellem 2 til 4 spiler og så");
 
         int playeramunt = Integer.parseInt(gui.getUserButtonPressed("Vægler antal af spiller","2","3","4"));
 
