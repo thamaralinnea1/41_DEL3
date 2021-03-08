@@ -3,31 +3,32 @@ package Models.Player;
 public class Player {
 
 
-    private String name;
-    private int position;
+    private String Name;
+    private int Position;
     private final int MaxPlayers = 4;
     private final int MinPlayers = 2;
    // private Piece piece;
-    private Account account;
+    private final Account account;
 
 
     public Player(String name, int position, int startBalance) {
-        this.name = name;
-        this.position = position;
+        this.Name = name;
+        this.Position = position;
         this.account = new Account(startBalance);
+
 
     }
     public void setName(String name){
-        this.name = name;
+        this.Name = name;
 
     }
     public String getName(){
-        return name;
+        return Name;
 
     }
 
     public int getPosition(){
-        return position;
+        return Position;
 
     }
     //sætter position til hvor meget spiller skal rykke.
@@ -39,7 +40,7 @@ public class Player {
     }
 
     public void setPosition(int newPosition){
-        this.position = newPosition;
+        this.Position = newPosition;
     }
 
     public Account getAccount(){

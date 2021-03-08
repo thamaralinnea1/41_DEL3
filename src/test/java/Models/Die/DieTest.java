@@ -10,6 +10,7 @@ class DieTest {
 
     @Test
     public void roll() {
+
         Die die = new Die();
 
         int loops = 100;

@@ -1,5 +1,7 @@
 package Controller;
 
+import Models.Board.Board;
+import Models.Board.Field;
 import Models.Player.Player;
 import gui_main.GUI;
 
@@ -10,6 +12,7 @@ public class Main {
 
         GameController gameController = new GameController();
         gameController.runGame();
+
 
     }
 }

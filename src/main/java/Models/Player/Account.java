@@ -2,29 +2,26 @@ package Models.Player;
 
 public class Account {
 
-    private int balance;
+    private int Balance;
 
 
     //set balance to startbalance
     public Account (int startBalance){
-        this.balance = startBalance;
-
+    this.Balance = startBalance;
     }
 
-    public void setAccount(int account){
-        this.balance =balance;
-    }
+
 
     public void addPoint(int fieldValue) {
-        balance +=  fieldValue;
+        Balance +=  fieldValue;
     }
 
     public void setBalance(int balance) {
-        this.balance = balance;
+        this.Balance = balance;
     }
 
     public int getBalance (){
 
-        return balance;
+        return Balance;
     }
 }

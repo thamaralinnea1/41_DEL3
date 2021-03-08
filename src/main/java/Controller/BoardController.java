@@ -19,17 +19,18 @@ public class BoardController {
         Field field =board.getField(position);
 
         switch (position){
-            default:
-                System.out.println(field);
+         default:
+         System.out.println(field);
         }
 
 
     }
 
+
     public BoardController (){
 
-
         GUI_Field[] fields = new GUI_Field[24];
+
         fields[0] = new GUI_Start("Start", "Modtag 2M", "", Color.WHITE, Color.MAGENTA );
         fields[1] = new GUI_Street("Burgerbaren", "1 M","Du er landet på Burgerbaren","1 M", Color.BLUE, Color.BLACK);
         fields[2] = new GUI_Street("Pizzariat", "1 M","Du er landet på Pizzariaet","1 M",Color.GRAY, Color.BLACK);
@@ -62,13 +63,8 @@ public class BoardController {
         fields[23] = new GUI_Street("Strandpromenaden", "5 M", "Du landede på Strandpromenaden", "5", Color.BLUE, Color.BLACK);
 
         GUIBoard = new GUI(fields);
-
-
-
         GUIBoard.setDie(1);
-
     }
-
     public GUI getGUIBoard() {
         return GUIBoard;
     }

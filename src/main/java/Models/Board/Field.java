@@ -6,10 +6,10 @@ public class Field {
 
 
     protected int fieldId;
-    private String title;
-    private int price,payRent;
+    private final String title;
+    private final int price,payRent;
     Player propertyOwner;
-    private String colour;
+    private final String colour;
 
 
 
@@ -22,40 +22,17 @@ public class Field {
         this.colour = colour;
     }
 
-    public void setFieldId(int numPosition){
 
-        fieldId = numPosition;
-    }
 
-    public int getFieldId() {
 
-        return fieldId;
 
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
-    public int getPayRent() {
-        return payRent;
-    }
 
-    public void setPayRent(int payRent) {
-        this.payRent = payRent;
-    }
 
     public Player getPropertyOwner() {
         return this.propertyOwner;
@@ -65,20 +42,16 @@ public class Field {
         this.propertyOwner = propertyOwner;
     }
 
-    public String getColour() {
-        return colour;
-    }
 
-    public void setColour(String colour) {
-        this.colour = colour;
-    }
 
 //    public String toString() {
 //   return "Field{"+ fieldId + "\n" + colour + "\n" + title + "\n" + price + "\n" + payRent + "\n" + propertyOwner;
 //    }
 
 
-    @Override
+
+    // den bare for at ved at toString metod kommer fra en klass som er oprettet i java klasser
+   @Override
     public String toString() {
         return
                 " title = " + title + '\'' +

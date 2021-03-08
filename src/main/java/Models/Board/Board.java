@@ -1,6 +1,8 @@
 package Models.Board;
 
 public class Board {
+
+
     public Field[] fields = new Field[24];
 
     {
@@ -28,11 +30,7 @@ public class Board {
         fields[21] = new Field(22, " Chance ", 0, 0,  null);
         fields[22] = new Field(23, " Vandlandet ", 5, 5,  " Blå ");
         fields[23] = new Field(24, " Strandpromenaden ", 5, 5, " Blå ");
-
-
-
     }
-
     public Field getField(int index) {
         return fields[index];
     }

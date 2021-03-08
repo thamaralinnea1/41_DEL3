@@ -3,12 +3,21 @@ package Controller;
 import Models.Player.Player;
 import gui_fields.GUI_Player;
 
+
+/**
+ * @author asa
+ */
 public class PlayerController {
     private Player currentPlayer;
-    private Player[] playerList;
-    private GUI_Player[] guiPlayerList;
+    private final Player[] playerList;
+
+
+    public GUI_Player getGuiPlayerList(int i) {
+        return guiPlayerList[i];
+    }
+
+    private final GUI_Player[] guiPlayerList;
     private int currentPlayerId;
-    private GUI_Player[] gui_players;
 
     public PlayerController(int amountOfPlayers) {
         this.playerList = new Player[amountOfPlayers];
@@ -21,7 +30,10 @@ public class PlayerController {
             playerList[i] = player;
         }
 
+
+
     }
+
 
     public Player getPlayer (int playerIndex){
         return playerList[playerIndex];
@@ -41,24 +53,20 @@ public class PlayerController {
         guiPlayerList[playerIndex] = gui_player;
     }
 
-
     //CurrentPlayer øges med 1. Modulus bruges så current player ikke kan overskride arraylist.
     public Player switchPlayer(){
 
         currentPlayerId = (currentPlayerId+1)%playerList.length;
         currentPlayer = playerList[currentPlayerId];
         return playerList[currentPlayerId];
-
     }
     public void setCurrentPlayer(int index){
         currentPlayerId = index;
         currentPlayer = playerList[index];
     }
-
     public Player getCurrentPlayer (){
         return currentPlayer;
     }
-
     public int getNumPlayers(){
         return playerList.length;
     }
